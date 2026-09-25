@@ -27,8 +27,8 @@ IMAGE_URLS = [
     "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gitlab.svg",
 ]
 
-# Directory to save the downloaded pictures
-OUTPUT_DIR = r"D:\unmesh personal\portfolio\portfolio"
+# Directory to save the downloaded pictures, relative to this script
+OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "downloads")
 
 
 def download_image(url):

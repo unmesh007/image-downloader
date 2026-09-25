@@ -27,10 +27,10 @@ A simple Python utility that downloads a list of images from the internet and sa
    cd "C:\Users\UNMESH\Desktop\image downloader"
    ```
 
-4. Install the required package:
+4. Install the required packages:
 
    ```powershell
-   python -m pip install requests
+   python -m pip install -r requirements.txt
    ```
 
 ### Optional virtual environment
@@ -40,7 +40,7 @@ Using a virtual environment keeps this project's dependencies separate from othe
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-python -m pip install requests
+python -m pip install -r requirements.txt
 ```
 
 If PowerShell prevents activation, run the script with the virtual environment's Python executable instead:
@@ -54,12 +54,12 @@ If PowerShell prevents activation, run the script with the virtual environment's
 Before running the program, open `image downloader.py` and update these values as needed:
 
 - `IMAGE_URLS`: the list of image URLs to download.
-- `OUTPUT_DIR`: the folder where downloaded images will be saved.
+- `OUTPUT_DIR`: the folder where downloaded images will be saved. By default, this is a `downloads` folder next to the script, so the project works on other computers without changing a machine-specific path.
 
 The default output folder is:
 
 ```text
-D:\unmesh personal\portfolio\portfolio
+downloads/
 ```
 
 The program creates this folder automatically if it does not exist. Make sure the URLs are direct links to image files and that you have permission to download and use the content.
@@ -84,10 +84,10 @@ Downloaded files are saved in the folder configured by `OUTPUT_DIR`. The termina
 
 ### `ModuleNotFoundError: No module named 'requests'`
 
-Install the dependency with:
+Install the dependencies with:
 
 ```powershell
-python -m pip install requests
+python -m pip install -r requirements.txt
 ```
 
 ### A download fails or times out
@@ -103,4 +103,5 @@ Check the value of `OUTPUT_DIR`. On Windows, use a raw string such as `r"C:\path
 ```text
 image downloader.py   # Main downloader script
 README.md             # Project documentation
+requirements.txt      # Python dependencies
 ```
